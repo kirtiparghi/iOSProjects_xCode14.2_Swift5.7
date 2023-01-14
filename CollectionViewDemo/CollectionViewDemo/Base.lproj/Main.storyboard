@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AiK-MP-kCD">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="dMd-ML-C8w">
+            <objects>
+                <collectionViewController id="SJM-lm-2yc" customClass="ViewController" customModule="CollectionViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="TYA-ds-2K6">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SNA-N7-0vF">
+                            <size key="itemSize" width="140" height="180"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Person" id="Juf-1w-ac7" customClass="PersonCell" customModule="CollectionViewDemo" customModuleProvider="target">
+                                <rect key="frame" x="10" y="10" width="140" height="180"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Wc6-xQ-g8d">
+                                    <rect key="frame" x="0.0" y="0.0" width="140" height="180"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gpf-OW-t1x">
+                                            <rect key="frame" x="10" y="10" width="120" height="120"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSt-iu-xzX">
+                                            <rect key="frame" x="52.666666666666671" y="134" width="34.666666666666671" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="adc-Oi-aQx"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="mSt-iu-xzX" firstAttribute="centerX" secondItem="Wc6-xQ-g8d" secondAttribute="centerX" id="3wb-Nn-laK"/>
+                                        <constraint firstAttribute="bottom" secondItem="mSt-iu-xzX" secondAttribute="bottom" constant="6" id="Al2-fp-q35"/>
+                                        <constraint firstItem="gpf-OW-t1x" firstAttribute="leading" secondItem="Wc6-xQ-g8d" secondAttribute="leading" constant="10" id="HzE-Rn-OXl"/>
+                                        <constraint firstItem="mSt-iu-xzX" firstAttribute="top" secondItem="gpf-OW-t1x" secondAttribute="bottom" constant="4" id="YkX-9N-4dD"/>
+                                        <constraint firstItem="gpf-OW-t1x" firstAttribute="centerX" secondItem="mSt-iu-xzX" secondAttribute="centerX" id="g06-Ru-VOE"/>
+                                        <constraint firstItem="gpf-OW-t1x" firstAttribute="top" secondItem="Wc6-xQ-g8d" secondAttribute="top" constant="10" id="uOR-1s-4Ln"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="customSize" width="140" height="180"/>
+                                <connections>
+                                    <outlet property="imageView" destination="gpf-OW-t1x" id="8s7-BX-GtO"/>
+                                    <outlet property="name" destination="mSt-iu-xzX" id="ltZ-Yw-TKx"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="SJM-lm-2yc" id="fXL-kF-g8A"/>
+                            <outlet property="delegate" destination="SJM-lm-2yc" id="6Fd-pD-F5q"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="7Jt-sy-a5k"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aCE-Kk-Pvc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="434.35114503816794" y="-146.47887323943664"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="l2q-5J-7Vy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AiK-MP-kCD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0ki-T3-WOR">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SJM-lm-2yc" kind="relationship" relationship="rootViewController" id="a8s-MS-vqc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KbB-9c-8r4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-492.36641221374043" y="-146.47887323943664"/>
+        </scene>
+    </scenes>
+</document>
